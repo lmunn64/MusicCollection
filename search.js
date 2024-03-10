@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 async function searchSong() {
 	const trackName = document.getElementById('searchInput').value;
 	const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -54,15 +52,14 @@ function displaySearchResults(data) {
 	});
 }
 
-if(!sessionStorage.getItem("Collection") && !sessionStorage.getItem("idCollection")){
-	var collection = [];
-	var idCollection = [];
-}
-else{
-	var collection = JSON.parse(sessionStorage.getItem("Collection"));
-	var idCollection = JSON.parse(sessionStorage.getItem("idCollection"));
-}
+var collection = [];
+var idCollection = [];
 
+if(sessionStorage.getItem("Collection") && sessionStorage.getItem("idCollection")){
+	collection = JSON.parse(sessionStorage.getItem("Collection"));
+	idCollection = JSON.parse(sessionStorage.getItem("idCollection"));
+}
+console.log(idCollection);
 async function addToCollection(trackId) {
 	if (!idCollection.includes(trackId)) {
 		idCollection.push(trackId);
@@ -80,8 +77,6 @@ async function addToCollection(trackId) {
 			// Add the trackObj instance to the collection
 			collection.push(trackData);
 			window.sessionStorage.setItem("Collection", JSON.stringify(collection));
-			//WRITE DATA TO JSON FILE
-			fs.writeFileSync("./data.json", JSON.stringify(collection))
 			console.log('Song added: ', trackData);
 		} catch (error) {
 			console.error('Error adding song to collection: ', error);
