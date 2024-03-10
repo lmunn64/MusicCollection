@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	data-bs-theme="auto"
+>
+	<head>
+		<script src="../assets/js/color-modes.js"></script>
+		<script
+			src="src/script.js"
+			type="module"
+		></script>
+		<style src="styles.css"></style>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<meta
+			name="description"
+			content=""
+		/>
+		<meta
+			name="author"
+			content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+		/>
+		<meta
+			name="generator"
+			content="Hugo 0.118.2"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<title>Catalogue of Items</title>
+
+		<link
+			rel="canonical"
+			href="https://getbootstrap.com/docs/5.3/examples/album/"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+		/>
+
+		<link
+			href="../assets/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		
+		<header
+			data-bs-theme="dark"
+			class="bg-green-500 mb-4"
+		>
+			<div
+				class="text-bg-dark"
+				id="navbarHeader"
+			>
+				<div class="container">
+					<div class="row justify-content-between align-items-center">
+						<div class="col-sm-auto py-4 text-left">
+							<span class="navbar-brand mb-0 h2" style = "font-size:x-large;">My Music Collection</span>
+						</div>
+						<div class="col-sm-auto py-4 text-right">
+							<h3 style="display: inline-block">
+								<a
+									style="margin: auto; text-decoration: none; color: rgb(104, 112, 226)"
+									href="index.html"
+									class="bg-white inline-block font-semibold hover:text-white py-1 px-2 border hover:border-transparent hover:scale-120 rounded outline-none"
+									><strong>Home</strong></a
+								>
+							</h3>
+							<h3 style="display: inline-block">
+								<a
+									style="margin: auto; text-decoration: none; color: rgb(104, 112, 226)"
+									href="search.html"
+									class="bg-white inline-block font-semibold hover:text-white py-1 px-2 border hover:border-transparent rounded outline-none"
+									><strong>Search</strong></a
+								>
+							</h3>
+							<h3 style="display: inline-block">
+								<a
+									style="margin: auto; text-decoration: none; color: rgb(104, 112, 226)"
+									href="about.html"
+									class="bg-white inline-block font-semibold hover:text-white py-1 px-2 border hover:border-transparent rounded outline-none"
+									><strong>About</strong></a
+								>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navbar navbar-dark bg-dark shadow-sm">
+				<div class="container-fluid"></div>
+			</div>
+		</header>
+
+		<main class="container">
+			<div
+				class="alert alert-warning alert-dismissible fade show"
+				role="alert"
+			>
+				You need to enable temporary access to the CORS Anywhere Heroku API by
+				clicking the link to make use of the search functionality because we are
+				not using a framework for our backend.
+				<a
+					href="https://cors-anywhere.herokuapp.com/corsdemo"
+					target="_blank"
+					>Click here</a
+				>
+				to enable temporary access to the CORS Anywhere Heroku API.
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="alert"
+					aria-label="Close"
+				></button>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-6 mt-10 pt-10">
+					<div class="input-group mb-3">
+						<input
+							type="text"
+							class="form-control"
+							id="searchInput"
+							placeholder="Enter song title"
+						/>
+						<button
+							class="btn btn-primary"
+							type="button"
+							onclick="searchSong()"
+						>
+							Search
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-10">
+					<div
+						id="searchResults"
+						class="search-results mt-3"
+						style="
+							max-height: 45rem;
+							overflow-y: auto;
+							border: 1px solid #ccc;
+							padding: 10px;
+						"
+					></div>
+				</div>
+			</div>
+			<script src="search.js"></script>
+		</main>
+
+		<!-- <footer class="text-body-secondary py-5">
+			<div class="d-flex justify-content-center">
+				<p class="float-end mb-1">
+					<a
+						href="#"
+						style="margin: center"
+						>Back to top</a
+					>
+				</p>
+			</div>
+		</footer> -->
+		<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
